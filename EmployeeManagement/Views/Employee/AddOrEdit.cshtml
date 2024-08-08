@@ -1,0 +1,45 @@
+﻿@model EmployeeManagement.Models.Employees
+@{
+    Layout = null;  // No se utiliza ningún layout en esta vista.
+}
+
+<form action="/Employee/AddOrEdit/" enctype="multipart/form-data" id="EmployeeForm" role="form" autocomplete="off" class="form-horizontal">
+    <!-- Se define un formulario con la acción para añadir o editar un empleado -->
+
+    <div class="form-horizontal" style="padding:0px 20px;">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <!-- Se muestra un resumen de validaciones en caso de errores, con estilo de texto peligroso -->
+
+        <input id="Emp_ID" name="Emp_ID" type="hidden" value="0">
+        <!-- Campo oculto para almacenar el ID del empleado -->
+
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.Nombre, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(Model => Model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(Model => Model.Nombre, "", new { @class = "text-danger" })
+            <!-- Campo de entrada para el nombre del empleado, con su etiqueta y mensajes de validación -->
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.Position, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(Model => Model.Position, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(Model => Model.Position, "", new { @class = "text-danger" })
+            <!-- Campo de entrada para la posición del empleado, con su etiqueta y mensajes de validación -->
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.Office, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(Model => Model.Office, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(Model => Model.Office, "", new { @class = "text-danger" })
+            <!-- Campo de entrada para la oficina del empleado, con su etiqueta y mensajes de validación -->
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(Model => Model.Salary, htmlAttributes: new { @class = "control-label" })
+            @Html.EditorFor(Model => Model.Salary, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(Model => Model.Salary, "", new { @class = "text-danger" })
+            <!-- Campo de entrada para el salario del empleado, con su etiqueta y mensajes de validación -->
+        </div>
+    </div>
+
+</form>

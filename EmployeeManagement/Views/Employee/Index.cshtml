@@ -1,0 +1,60 @@
+﻿@model EmployeeManagement.Models.Employees
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";  // Se especifica que esta vista utilizará un diseño general compartido.
+}
+
+<div class="container" style="margin-top:20px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <p style="margin-top: 20px;">
+                <button id="AddNew" type="button" class="btn btn-success">
+                    Agregar Nuevo
+                </button>
+            </p>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(Model => Model.ID)</th>
+                        <th>@Html.DisplayNameFor(Model => Model.Nombre)</th>
+                        <th>@Html.DisplayNameFor(Model => Model.Position)</th>
+                        <th>@Html.DisplayNameFor(Model => Model.Office)</th>
+                        <th>@Html.DisplayNameFor(Model => Model.Salary)</th>
+                        <th>Acciones</th>  // Columna para botones de acciones como editar y eliminar.
+                    </tr>
+                </thead>
+                <tbody id="tblBody">
+                    <!-- El cuerpo de la tabla se llenará dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para agregar o editar empleados -->
+<div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabl">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @Html.Action("AddOrEdit")  // Carga la vista parcial para agregar o editar empleados dentro del modal.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                <input type="button" value="Agregar" id="btnSaveEmp" class="btn btn-success pull-left" />
+                <!-- Botón para guardar el empleado desde el modal -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Inclusión de las librerías de jQuery y el script personalizado -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/Scripts/JS/Scripts.js"></script>
