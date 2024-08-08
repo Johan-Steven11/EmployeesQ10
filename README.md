@@ -11,7 +11,7 @@ Aplicación ASP.NET MVC para gestionar empleados, utilizando .NET Framework 4.8.
 - .NET Framework 4.8.
 
 ## Instrucciones para ejecutar
-1. Clonar el repositorio: `git clone <URL_DEL_REPOSITORIO>`
+1. Clonar o descargar el repositorio: `git clone <URL_DEL_REPOSITORIO>`
 2. Abrir el proyecto en Visual Studio.
 3. Restaurar paquetes NuGet.
 4. Compilar y ejecutar la solución.
@@ -23,4 +23,5 @@ Aplicación ASP.NET MVC para gestionar empleados, utilizando .NET Framework 4.8.
 
 ## Notas adicionales
 - El proyecto incluye Bootstrap para el diseño de la interfaz de usuario.
+- Los datos de los empleados se encuentran almacenados en una base de datos remota en Somee. El funcionamiento es igual en distintos equipos siempre y cuando la conexión a la base de datos remota esté configurada correctamente en el archivo Web.config.
 
